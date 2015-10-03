@@ -1,0 +1,46 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{EACF3A10-1066-B77F-0593-8928385BD8D9}") = "ZigZag", "Assembly-CSharp.csproj", "{753BC2A2-3680-5CB5-3DA2-FD6C2D109E70}"
+EndProject
+Project("{EACF3A10-1066-B77F-0593-8928385BD8D9}") = "ZigZag", "Assembly-CSharp-Editor.csproj", "{6DF45FA7-476C-50EA-BD10-677D70753B36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{753BC2A2-3680-5CB5-3DA2-FD6C2D109E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753BC2A2-3680-5CB5-3DA2-FD6C2D109E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753BC2A2-3680-5CB5-3DA2-FD6C2D109E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753BC2A2-3680-5CB5-3DA2-FD6C2D109E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF45FA7-476C-50EA-BD10-677D70753B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF45FA7-476C-50EA-BD10-677D70753B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF45FA7-476C-50EA-BD10-677D70753B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF45FA7-476C-50EA-BD10-677D70753B36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+														GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.IndentWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal
