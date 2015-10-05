@@ -80,6 +80,7 @@ public class PlayerMovement : MyBehaviour{
 
         AmountToMove = Speed * Time.deltaTime;
         transform.Translate(AmountToMove * _dir);
+
         //_rigidbody.velocity = Speed * _dir;
 	}
 
