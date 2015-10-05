@@ -15,7 +15,7 @@ public class FirstTile : MyBehaviour{
         if (col.CompareTag("Player"))
         {
             // Spawn
-            StartCoroutine(fallDown(1.5f));
+            StartCoroutine(fallDown(0.2f));
         }
     }
 
@@ -23,6 +23,15 @@ public class FirstTile : MyBehaviour{
     {
         yield return new WaitForSeconds(delayTime);
         rigidbody.isKinematic = false;
+        yield return new WaitForSeconds(2f);
+        destroy();
     }
+
+    void destroy()
+    {
+        Destroy(gameObject);
+    }
+
+
 
 }

@@ -1,0 +1,50 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class SmoothFollow2 : MonoBehaviour
+{
+    public Transform target;
+    public PlayerMovement player;
+    
+    public float x = 3.0f;
+    public float distance = 3.0f;
+    public float height = 3.0f;
+    public float damping = 5.0f;
+    public bool smoothRotation = true;
+    public bool followBehind = true;
+    public float rotationDamping = 10.0f;
+
+    public float velocity;
+
+    private Transform _transform;
+
+    void Awake()
+    {
+        _transform = GetComponent<Transform>();
+    }
+
+    void Update()
+    {
+        //Vector3 wantedPosition;
+        //if (followBehind)
+        //    wantedPosition = target.TransformPoint(x, height, -distance);
+        //else
+        //    wantedPosition = target.TransformPoint(x, height, distance);
+
+        //transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * damping);
+
+        //if (smoothRotation)
+        //{
+        //    Quaternion wantedRotation = Quaternion.LookRotation(target.position - transform.position, target.up);
+        //    transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
+        //}
+        //else transform.LookAt(target, target.up);
+
+        if (!GameManager.Instance.isPlay) return;
+
+        Vector3 wantedPosition = new Vector3(_transform.position.x - velocity, 30f, _transform.position.z + velocity);
+
+        _transform.position = Vector3.Lerp(_transform.position, wantedPosition, Time.deltaTime * damping);
+
+    }
+}

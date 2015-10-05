@@ -77,6 +77,21 @@ public class TweenPosition : UITweener
 		return comp;
 	}
 
+    static public TweenPosition Begin(GameObject go, float duration, Vector3 from,Vector3 to, UITweener.Method method)
+    {
+        TweenPosition comp = UITweener.Begin<TweenPosition>(go, duration);
+        comp.from = from;
+        comp.to = to;
+        comp.method = method;
+
+        if (duration <= 0f)
+        {
+            comp.Sample(1f, true);
+            comp.enabled = false;
+        }
+        return comp;
+    }
+
     static public TweenPosition Begin(GameObject go, float duration, Vector3 pos,UITweener.Method method)
     {
         TweenPosition comp = UITweener.Begin<TweenPosition>(go, duration);
@@ -91,6 +106,7 @@ public class TweenPosition : UITweener
         }
         return comp;
     }
+
 
 	/// <summary>
 	/// Start the tweening operation.
