@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TileController : MyBehaviour{
 
-    public Rigidbody rigidbody;
+    public Rigidbody _rigidbody;
     public GameObject LeftAnchor;
     public GameObject TopAnchor;
     public TileManager _TileManager;
@@ -52,14 +52,14 @@ public class TileController : MyBehaviour{
     IEnumerator fallDown(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        rigidbody.isKinematic = false;
+        _rigidbody.isKinematic = false;
         yield return new WaitForSeconds(2f);
         recycle();
     }
 
     void recycle()
     {
-        rigidbody.isKinematic = true;
+        GetComponent<Rigidbody>().isKinematic = true;
         //TextMeshEffect.transform.localPosition = startPoint;
         gameObject.Recycle();
     }

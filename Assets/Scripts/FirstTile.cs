@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FirstTile : MyBehaviour{
 
-    public Rigidbody rigidbody;
+    public Rigidbody _rigidbody;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class FirstTile : MyBehaviour{
     IEnumerator fallDown(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        rigidbody.isKinematic = false;
+        _rigidbody.isKinematic = false;
         yield return new WaitForSeconds(2f);
         destroy();
     }
