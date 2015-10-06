@@ -78,10 +78,11 @@ public class PlayerMovement : MyBehaviour{
             }
         }
 
-        AmountToMove = Speed * Time.deltaTime;
-        transform.Translate(AmountToMove * _dir);
+        if (!GameManager.Instance.isPlay) return;
 
-        //_rigidbody.velocity = Speed * _dir;
+        AmountToMove = Speed * Time.deltaTime;
+        //transform.Translate(AmountToMove * _dir);
+        _rigidbody.velocity = Speed * _dir;
 	}
 
     void OnTriggerEnter(Collider col)
