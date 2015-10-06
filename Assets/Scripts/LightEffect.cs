@@ -10,7 +10,7 @@ public class LightEffect : MyBehaviour{
 	// Use this for initialization
 	void Start () {
         addColorToCurrentList();
-        InvokeRepeating("Tween", 10f, 10f);
+        Invoke(startTweenRepeat, 10f);
 	}
 
     public void Tween()
@@ -39,4 +39,18 @@ public class LightEffect : MyBehaviour{
             currentList.Add(Colors[i]);
         }
     }
+
+    void startTweenRepeat()
+    {
+        StartCoroutine(RepeatFuncTween(10f));
+    }
+
+    IEnumerator RepeatFuncTween(float repeatRate) {
+
+        if (!GameManager.Instance.isPlay) yield return null;
+
+        Tween();
+        yield return new WaitForSeconds(repeatRate);
+        StartCoroutine(RepeatFuncTween(repeatRate));
+     }
 }

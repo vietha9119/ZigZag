@@ -35,6 +35,8 @@ public class PlayerMovement : MyBehaviour{
 
 	// Use this for initialization
 	void Start () {
+
+        Application.targetFrameRate = 60;
         _dir = Vector3.zero;
         isDead = false;
         GameManager.Instance.isPlay = false;
@@ -78,7 +80,11 @@ public class PlayerMovement : MyBehaviour{
             }
         }
 
-        if (!GameManager.Instance.isPlay) return;
+        if (!GameManager.Instance.isPlay)
+        {
+            _rigidbody.AddForce(new Vector3(0, -100, 0));
+            return;
+        }
 
         AmountToMove = Speed * Time.deltaTime;
         //transform.Translate(AmountToMove * _dir);
@@ -89,8 +95,8 @@ public class PlayerMovement : MyBehaviour{
     {
         if (col.CompareTag("PickUp"))
         {
-            Vector3 psPos = transform.position - new Vector3(0f, 0.5f, 0f);
-            Instantiate(Ps, psPos, Quaternion.Euler(new Vector3(-90,0,0)));
+            Vector3 psPos = transform.position + new Vector3(0,0.5f,0);
+            Instantiate(Ps, psPos, Quaternion.Euler(new Vector3(25, -30, -180)));
             col.gameObject.SetActive(false);
             //_listTileMovedOn[0].GetComponent<TileController>().setScoreTextEffect();
 
@@ -116,19 +122,6 @@ public class PlayerMovement : MyBehaviour{
             {
                 GameOver();
             }
-
-            //RaycastHit hit;
-
-            //Ray downRay = new Ray(transform.position, -Vector3.up);
-
-            //if (!Physics.Raycast(downRay, out hit))
-            //{
-            //     Kill Player
-            //    camera.transform.parent = null;
-            //    isDead = true;
-            //    gov.runAll();
-            //    GameManager.Instance.isPlay = false;
-            //}
         }
     }
 
